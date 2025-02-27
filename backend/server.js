@@ -63,5 +63,23 @@ app.post("/login", async (req, res) => {
     res.json({ status: "error", message: "Server Error" });
   }
 });
+const Ticket = require("./models/TicketModel");
+
+// POST Ticket Route
+app.post("/ticket", async (req, res) => {
+  const { title, description, priority } = req.body;
+
+  if (!title || !description) {
+    return res.status(400).json({ message: "All fields are required" });
+  }
+
+  try {
+    const newTicket = new Ticket({ title, description, priority });
+    await newTicket.save();
+    res.status(201).json({ message: "Ticket Submitted Successfully" });
+  } catch (err) {
+    res.status(500).json({ message: "Server Error", error: err.message });
+  }
+});
 
 app.listen(5000, () => console.log("🔥 Server running on port 5000"));
