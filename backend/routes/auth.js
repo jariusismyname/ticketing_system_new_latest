@@ -4,6 +4,32 @@ const jwt = require("jsonwebtoken");
 const User = require("../models/User");
 
 const router = express.Router();
+const express = require("express");
+
+let tickets = [];
+
+router.post("/ticket", (req, res) => {
+  const { title, description, priority } = req.body;
+
+  if (!title || !description) {
+    return res.status(400).json({ message: "All fields are required!" });
+  }
+
+  const ticket = {
+    id: tickets.length + 1,
+    title,
+    description,
+    priority,
+    status: "Pending",
+    date: new Date(),
+  };
+
+  tickets.push(ticket);
+
+  res.json({ message: "Ticket Submitted Successfully!" });
+});
+
+module.exports = router;
 
 // REGISTER USER
 router.post("/register", async (req, res) => {

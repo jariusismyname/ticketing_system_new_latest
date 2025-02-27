@@ -36,6 +36,10 @@ const Login = () => {
     navigate("/register"); // Pang redirect sa Register Page
   };
 
+  const goToAdmin = () => {
+    navigate("/loginadmin"); // Pang redirect sa Admin Login
+  };
+
   return (
     <div className="login">
       <div className="login-card">
@@ -58,10 +62,16 @@ const Login = () => {
           <button type="submit">Login</button>
         </form>
 
-        {/* Register Text + Button (Nasa loob ng card 🔥) */}
+        {/* Register Section */}
         <div className="register-section">
           <p>Don't have an account?</p>
           <button onClick={goToRegister}>Register</button>
+        </div>
+
+        {/* 🔥 Admin Section */}
+        <div className="admin-section">
+          <p>I am an Admin</p>
+          <button onClick={goToAdmin}>Admin Login</button>
         </div>
       </div>
     </div>
