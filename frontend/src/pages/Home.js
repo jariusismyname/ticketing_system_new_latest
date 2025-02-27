@@ -57,13 +57,13 @@ const Home = () => {
         <nav>
           <ul>
             <li>
-              <a href="#" className="nav-link active">
+              <a href="" className="nav-link active">
                 Home
               </a>
             </li>
             <li>
-              <a href="#" className="nav-link">
-                About
+              <a href="/ticket" className="nav-link">
+                Submit Ticket
               </a>
             </li>
             <li>

@@ -4,6 +4,8 @@ import Register from "./pages/Register";
 import Home from "./pages/Home";
 import { ToastContainer } from "react-toastify";
 import "./App.css";
+import Ticket from "./pages/Ticket";
+
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/ticket" element={<Ticket />} />
+
       </Routes>
     </>
   );

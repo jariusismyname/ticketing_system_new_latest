@@ -8,6 +8,33 @@ const jwt = require("jsonwebtoken");
 const app = express(); // 🔥 This should be the FIRST LINE AFTER IMPORTS
 app.use(express.json());
 app.use(cors());
+const express = require("express");
+const router = express.Router();
+
+let tickets = [];
+
+router.post("/ticket", (req, res) => {
+  const { title, description, priority } = req.body;
+
+  if (!title || !description) {
+    return res.status(400).json({ message: "All fields are required!" });
+  }
+
+  const ticket = {
+    id: tickets.length + 1,
+    title,
+    description,
+    priority,
+    status: "Pending",
+    date: new Date(),
+  };
+
+  tickets.push(ticket);
+
+  res.json({ message: "Ticket Submitted Successfully!" });
+});
+
+module.exports = router;
 
 mongoose
   .connect("mongodb://localhost:27017/college_ticketing_system", {

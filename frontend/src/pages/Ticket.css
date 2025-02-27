@@ -1,0 +1,100 @@
+.ticket-container {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #007bff, #00d4ff);
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .ticket-card {
+    padding: 40px;
+    width: 450px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .ticket-card h2 {
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+  
+  .ticket-card form input,
+  .ticket-card form textarea,
+  .ticket-card form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    color: #333;
+    font-size: 1rem;
+    transition: 0.3s ease;
+  }
+  
+  .ticket-card form input:focus,
+  .ticket-card form textarea:focus,
+  .ticket-card form select:focus {
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(1.03);
+  }
+  
+  .ticket-card form textarea {
+    height: 120px;
+    resize: none;
+  }
+  
+  .ticket-card form button {
+    padding: 12px;
+    width: 100%;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+  
+  .ticket-card form button:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  .back-home {
+    color: #ffffff;
+    cursor: pointer;
+    margin-top: 20px;
+    display: inline-block;
+    font-weight: bold;
+    transition: 0.3s ease;
+  }
+  
+  .back-home:hover {
+    text-decoration: underline;
+    letter-spacing: 1.5px;
+    color: #00d4ff;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
