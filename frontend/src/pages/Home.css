@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    transition: background 0.3s;
+  }
+  
+  header {
+    background: #007bff;
+    padding: 20px;
+    color: white;
+  }
+  
+  nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 20px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .nav-link.active {
+    text-decoration: underline;
+  }
+  
+  #scrollToTop {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  #scrollToTop.show {
+    display: block;
+  }
+  
+  #darkMode {
+    margin: 20px;
+    padding: 10px;
+    background: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dark-mode {
+    background: #333;
+    color: white;
+  }
+  
