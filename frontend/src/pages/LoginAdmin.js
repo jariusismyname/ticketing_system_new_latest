@@ -13,7 +13,7 @@ const LoginAdmin = () => {
 
     if (password === "password") {
       toast.success("Login Successful 🎯");
-      navigate("/admin");
+      navigate("/ticketsadmin");
     } else {
       toast.error("Invalid Password ❌");
     }
