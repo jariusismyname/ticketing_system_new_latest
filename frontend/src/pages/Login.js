@@ -3,7 +3,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import "./Login.css";
 import "react-toastify/dist/ReactToastify.css";
-import { useNavigate } from "react-router-dom"; // Para sa redirection
+import { useNavigate } from "react-router-dom"; // Pang redirect
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -38,27 +38,32 @@ const Login = () => {
 
   return (
     <div className="login">
-      <form onSubmit={handleLogin}>
-        <h2>Login</h2>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <button type="submit">Login</button>
-      </form>
+      <div className="login-card">
+        <form onSubmit={handleLogin}>
+          <h2>Login</h2>
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          <button type="submit">Login</button>
+        </form>
 
-      <p>Don't have an account?</p>
-      <button onClick={goToRegister}>Register</button>
+        {/* Register Text + Button (Nasa loob ng card 🔥) */}
+        <div className="register-section">
+          <p>Don't have an account?</p>
+          <button onClick={goToRegister}>Register</button>
+        </div>
+      </div>
     </div>
   );
 };
