@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./Admin.css"; // Your Beautiful CSS
+import "./TicketsAdmin"; // Your Beautiful CSS
 
 const Admin = () => {
   const [tickets, setTickets] = useState([]);
@@ -34,7 +34,7 @@ const Admin = () => {
         <nav>
           <ul>
             <li><a href="/homeadmin">Home</a></li>
-            <li><a href="/admin">Tickets</a></li>
+            <li><a href="/ticketsadmin">Tickets</a></li>
             <li><a href="/users">User</a></li>
             <li><a href="/">Logout</a></li>
           </ul>
@@ -42,7 +42,7 @@ const Admin = () => {
       </header>
 
       <div className="admin-content">
-        <h1>Admin Panel</h1>
+        <h1>Tickets Admin</h1>
         <h3>Manage Tickets Below:</h3>
 
         <table>

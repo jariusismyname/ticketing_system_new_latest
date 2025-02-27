@@ -32,9 +32,9 @@ const Users = () => {
       {/* 🔥 Header Navigation Bar */}
       <header className="users-header">
         <nav>
-          <ul>
-            <li><a href="/admin">Tickets</a></li>
+          <ul>            
             <li><a href="/homeadmin">Home</a></li>
+            <li><a href="/ticketsadmin">Tickets</a></li>
             <li><a href="/user" className="active">Users</a></li>
             <li><a href="/">Logout</a></li>
           </ul>
