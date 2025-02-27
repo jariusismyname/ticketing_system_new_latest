@@ -33,9 +33,9 @@ const Admin = () => {
       <header className="admin-header">
         <nav>
           <ul>
-            <li><a href="/home">Home</a></li>
-            <li><a href="/ticketsadmin">Tickets</a></li>
-            <li><a href="/user">User</a></li>
+            <li><a href="/homeadmin">Home</a></li>
+            <li><a href="/admin">Tickets</a></li>
+            <li><a href="/users">User</a></li>
             <li><a href="/">Logout</a></li>
           </ul>
         </nav>

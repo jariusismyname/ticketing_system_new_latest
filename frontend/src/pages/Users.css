@@ -1,0 +1,81 @@
+.users-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .users-header {
+    background: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .users-header nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .users-header nav ul li {
+    display: inline;
+    margin: 0 20px;
+  }
+  
+  .users-header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .users-header nav ul li a:hover {
+    color: #ff6347; /* Tomato Color */
+  }
+  
+  .users-header nav ul li a.active {
+    color: #ff6347; /* Active Link */
+  }
+  
+  .users-content {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .users-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .users-content th,
+  .users-content td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  .users-content th {
+    background-color: #ff6347; /* Tomato */
+    color: white;
+  }
+  
+  .delete-btn {
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .delete-btn:hover {
+    background-color: darkred;
+  }
+  
+  .users-footer {
+    background: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+  }
+  

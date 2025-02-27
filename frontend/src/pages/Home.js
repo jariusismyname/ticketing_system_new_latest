@@ -62,7 +62,7 @@ const Home = () => {
               </a>
             </li>
             <li>
-              <a href="/ticket" className="nav-link">
+              <a href="/tickets" className="nav-link">
                 Submit Ticket
               </a>
             </li>
