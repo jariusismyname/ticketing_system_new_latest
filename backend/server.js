@@ -1,9 +1,18 @@
+import path from  "path";
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const cors = require("cors");
 const jwt = require("jsonwebtoken");
+
+
+cons__dirname = path.resolve();
+if (process.env.NODE_ENV === "production") {}{
+  app.use(express.static(path.join(__dirname, "/frontend/build")));
+
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html")))
 
 const app = express(); // 🔥 This should be the FIRST LINE AFTER IMPORTS
 app.use(express.json());
@@ -136,3 +145,4 @@ app.put("/ticketsadmin/:id", async (req, res) => {
     res.status(500).send("Error updating ticket");
   }
 });
+}
