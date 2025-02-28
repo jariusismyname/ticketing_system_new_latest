@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./TicketsAdmin.css"; // Your Beautiful CSS
-
-
-
+import "./TicketsAdmin.css";
 
 const Admin = () => {
-
-
-
   const [tickets, setTickets] = useState([]);
+  const [editMode, setEditMode] = useState(null);
+  const [editedStatus, setEditedStatus] = useState("");
 
   useEffect(() => {
     fetchTickets();
@@ -33,9 +29,25 @@ const Admin = () => {
     }
   };
 
+  const startEdit = (ticket) => {
+    setEditMode(ticket._id);
+    setEditedStatus(ticket.status);
+  };
+
+  const saveEdit = async (id) => {
+    try {
+      await axios.put(`http://localhost:5000/ticketsadmin/${id}`, {
+        status: editedStatus,
+      });
+      fetchTickets();
+      setEditMode(null);
+    } catch (err) {
+      console.error("Error updating ticket", err);
+    }
+  };
+
   return (
     <div className="admin-page">
-      {/* 🔥 Header with Navigation Bar */}
       <header className="admin-header">
         <nav>
           <ul>
@@ -58,7 +70,7 @@ const Admin = () => {
               <th>Description</th>
               <th>Priority</th>
               <th>Status</th>
-
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -67,11 +79,35 @@ const Admin = () => {
                 <td>{ticket.title}</td>
                 <td>{ticket.description}</td>
                 <td>{ticket.priority}</td>
-                <td>{ticket.status}</td>
                 <td>
-                  <button onClick={() => deleteTicket(ticket._id)}>
-                    Delete
-                  </button>
+                  {editMode === ticket._id ? (
+                    <select
+                      value={editedStatus}
+                      onChange={(e) => setEditedStatus(e.target.value)}
+                    >
+                      <option value="Pending">Pending</option>
+                      <option value="In Progress">In Progress</option>
+                      <option value="Resolved">Resolved</option>
+                      <option value="Closed">Closed</option>
+                    </select>
+                  ) : (
+                    ticket.status
+                  )}
+                </td>
+                <td>
+                  {editMode === ticket._id ? (
+                    <>
+                      <button className="save-btn" onClick={() => saveEdit(ticket._id)}>Save</button><br/>
+                      <br></br>
+                      <button className="cancel-btn" onClick={() => setEditMode(null)}>Cancel</button>
+                    </>
+                  ) : (
+                    <>
+                      <button className="edit-btn" onClick={() => startEdit(ticket)}>Edit</button><br/>
+                      <br></br>
+                      <button className="delete-btn" onClick={() => deleteTicket(ticket._id)}>Delete</button>
+                    </>
+                  )}
                 </td>
               </tr>
             ))}
@@ -79,7 +115,6 @@ const Admin = () => {
         </table>
       </div>
 
-      {/* 🔥 Footer Section */}
       <footer className="admin-footer">
         <p>&copy; 2025 Ticketing System | All Rights Reserved</p>
       </footer>

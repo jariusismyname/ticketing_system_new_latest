@@ -126,3 +126,13 @@ app.delete("/ticketsadmin/:id", async (req, res) => {
     res.status(500).send("Server Error");
   }
 });
+app.put("/ticketsadmin/:id", async (req, res) => {
+  try {
+    const { status } = req.body;
+    const updatedTicket = await Ticket.findByIdAndUpdate(req.params.id, { status }, { new: true });
+    res.json(updatedTicket);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Error updating ticket");
+  }
+});

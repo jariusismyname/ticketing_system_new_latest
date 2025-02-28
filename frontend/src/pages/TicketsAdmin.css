@@ -139,3 +139,96 @@ button:hover {
     text-shadow: 0 0 20px #ff4757, 0 0 30px #ff4757;
   }
 }
+.edit-btn {
+  padding: 10px;
+  background: #ffa502;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 165, 2, 0.8);
+}
+
+.edit-btn:hover {
+  background: #e67e22;
+  transform: scale(1.05);
+}
+
+.save-btn {
+  padding: 10px;
+  background: #2ed573;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: 0.3s ease;
+}
+
+.save-btn:hover {
+  background: #20bf6b;
+}
+
+.cancel-btn {
+  padding: 10px;
+  background: #ff4757;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.cancel-btn:hover {
+  background: #e84118;
+}
+select {
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background: #2c3e50;
+  color: #fff;
+  transition: 0.3s ease;
+}
+
+select:hover {
+  background: #34495e;
+}
+
+.edit-btn {
+  padding: 10px;
+  background: #ffa502;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.save-btn {
+  padding: 10px;
+  background: #2ed573;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  padding: 10px;
+  background: #ff4757;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  padding: 10px;
+  background: #e84118;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

@@ -70,7 +70,7 @@ const Login = () => {
 
         {/* 🔥 Admin Section */}
         <div className="admin-section">
-          <p>I am an Admin</p>
+          {/* <p>I am an Admin</p> */}<br/>
           <button onClick={goToAdmin}>Admin Login</button>
         </div>
       </div>
