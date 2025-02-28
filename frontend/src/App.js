@@ -9,6 +9,7 @@ import "./App.css";
 import Ticket from "./pages/Tickets";
 import LoginAdmin from "./pages/LoginAdmin";
 import Users from "./pages/Users";
+import React from 'react';
 
 function App() {
   return (
