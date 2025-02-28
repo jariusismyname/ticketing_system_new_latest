@@ -1,1 +1,1 @@
-axios.get("https://your-backend-url.onrender.com/api")
+const API_URL = "https://ticketingsystemnew.onrender.com/api";
