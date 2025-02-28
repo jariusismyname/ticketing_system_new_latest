@@ -1,0 +1,23 @@
+.top-navbar {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    color: white;
+  }
+  
+  .top-navbar button {
+    padding: 10px 20px;
+    background: #ff4757;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .top-navbar button:hover {
+    background: #e84118;
+  }
+  

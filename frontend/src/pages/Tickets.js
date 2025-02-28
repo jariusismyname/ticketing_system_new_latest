@@ -4,7 +4,6 @@ import "./Tickets.css"; // For the design
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
-
 const Ticket = () => {
   const [ticketData, setTicketData] = useState({
     title: "",
@@ -41,6 +40,7 @@ const Ticket = () => {
   };
 
   return (
+    
     <div className="ticket-container">
       <div className="ticket-card">
         <h2>Submit Ticket</h2>

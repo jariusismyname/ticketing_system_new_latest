@@ -1,0 +1,33 @@
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(15px);
+    color: white;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .sidebar li:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  .sidebar .active {
+    background: rgba(255, 255, 255, 0.3);
+    border-left: 5px solid #ff4757;
+  }
+  

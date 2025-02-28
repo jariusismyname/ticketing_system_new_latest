@@ -1,7 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./HomeAdmin.css"; // For Beautiful CSS
-
+import Sidebar from "../components/Sidebar";
+import TopNavbar from "../components/TopNavbar";
 const HomeAdmin = () => {
   const navigate = useNavigate();
 
@@ -18,18 +19,13 @@ const HomeAdmin = () => {
   };
 
   return (
+    <div className="admin-layout">
+    <Sidebar />
+    <div className="admin-content">
+      <TopNavbar />
     <div className="homeadmin-container">
       {/* 🔥 Navigation Header */}
-      <header className="homeadmin-header">
-        <nav>
-          <ul>
-            <li><a href="/homeadmin" className="active">Home</a></li>
-            <li><a href="/ticketsadmin">Tickets</a></li>
-            <li><a href="/users">Users</a></li>
-            <li><button onClick={logout} className="logout-btn">Logout</button></li>
-          </ul>
-        </nav>
-      </header>
+    
 
       {/* Welcome Message */}
       <div className="welcome-section">
@@ -45,6 +41,8 @@ const HomeAdmin = () => {
       <footer className="admin-footer">
         <p>&copy; 2025 Ticketing System | Admin Panel</p>
       </footer>
+    </div>
+    </div>
     </div>
   );
 };

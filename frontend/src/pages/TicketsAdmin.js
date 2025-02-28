@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Sidebar from "../components/Sidebar";
+import TopNavbar from "../components/TopNavbar";
 import "./TicketsAdmin.css";
 
 const Admin = () => {
@@ -47,21 +49,11 @@ const Admin = () => {
   };
 
   return (
-    <div className="admin-page">
-      <header className="admin-header">
-        <nav>
-          <ul>
-            <li><a href="/homeadmin">Home</a></li>
-            <li><a href="/ticketsadmin">Tickets</a></li>
-            <li><a href="/users">User</a></li>
-            <li><a href="/">Logout</a></li>
-          </ul>
-        </nav>
-      </header>
-
+    <div className="admin-layout">
+      <Sidebar />
       <div className="admin-content">
+        <TopNavbar />
         <h1>Tickets Admin</h1>
-        <h3>Manage Tickets Below:</h3>
 
         <table>
           <thead>
@@ -97,15 +89,13 @@ const Admin = () => {
                 <td>
                   {editMode === ticket._id ? (
                     <>
-                      <button className="save-btn" onClick={() => saveEdit(ticket._id)}>Save</button><br/>
-                      <br></br>
-                      <button className="cancel-btn" onClick={() => setEditMode(null)}>Cancel</button>
+                      <button onClick={() => saveEdit(ticket._id)}>Save</button>
+                      <button onClick={() => setEditMode(null)}>Cancel</button>
                     </>
                   ) : (
                     <>
-                      <button className="edit-btn" onClick={() => startEdit(ticket)}>Edit</button><br/>
-                      <br></br>
-                      <button className="delete-btn" onClick={() => deleteTicket(ticket._id)}>Delete</button>
+                      <button onClick={() => startEdit(ticket)}>Edit</button>
+                      <button onClick={() => deleteTicket(ticket._id)}>Delete</button>
                     </>
                   )}
                 </td>
@@ -114,10 +104,6 @@ const Admin = () => {
           </tbody>
         </table>
       </div>
-
-      <footer className="admin-footer">
-        <p>&copy; 2025 Ticketing System | All Rights Reserved</p>
-      </footer>
     </div>
   );
 };

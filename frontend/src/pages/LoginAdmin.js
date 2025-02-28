@@ -31,8 +31,18 @@ const LoginAdmin = () => {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-          <button type="submit">Login</button>
+          <button className="button">Login</button><br></br><br/>
+<button
+          className="user-login-btn"
+          onClick={() => navigate("/login")}
+        >
+         I am a User
+        </button>
+
         </form>
+
+        {/* 🎯 New User Login Button */}
+        
       </div>
     </div>
   );

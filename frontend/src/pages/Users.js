@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Users.css";
 
+import Sidebar from "../components/Sidebar";
+import TopNavbar from "../components/TopNavbar";
 const Users = () => {
   const [users, setUsers] = useState([]);
 
@@ -29,18 +31,13 @@ const Users = () => {
   
 
   return (
+    <div className="admin-layout">
+          <Sidebar />
+          <div className="admin-content">
+            <TopNavbar />
     <div className="users-page">
       {/* 🔥 Header Navigation Bar */}
-      <header className="users-header">
-        <nav>
-          <ul>            
-            <li><a href="/homeadmin">Home</a></li>
-            <li><a href="/ticketsadmin">Tickets</a></li>
-            <li><a href="/users" className="active">Users</a></li>
-            <li><a href="/">Logout</a></li>
-          </ul>
-        </nav>
-      </header>
+     
 
       <div className="users-content">
         <h1>Users Management</h1>
@@ -75,6 +72,7 @@ const Users = () => {
         <p>&copy; 2025 Ticketing System | All Rights Reserved</p>
       </footer>
     </div>
+    </div></div>
   );
 };
 
