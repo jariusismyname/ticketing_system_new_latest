@@ -23,7 +23,7 @@ const UserSchema = new mongoose.Schema({
   password: String,
 });
 
-const User = mongoose.model("college_ticketing", UserSchema);
+const User = mongoose.model("college_ticketings", UserSchema);
 
 // Register Endpoint
 app.post("/register", async (req, res) => {
@@ -83,3 +83,24 @@ app.post("/ticket", async (req, res) => {
 });
 
 app.listen(5000, () => console.log("🔥 Server running on port 5000"));
+
+app.get("/users", async (req, res) => {
+  try {
+    const users = await User.find();
+    res.json(users);
+  } catch (err) {
+    res.status(500).json({ message: "Server Error", error: err.message });
+  }
+});
+
+
+app.get("/ticketsadmin", async (req, res) => {
+  try {
+    const tickets = await Ticket.find();
+    res.json(tickets);
+  } catch (err) {
+    res.status(500).json({ message: "Server Error", error: err.message });
+  }
+});
+
+

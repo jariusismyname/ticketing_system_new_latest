@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./TicketsAdmin"; // Your Beautiful CSS
+import "./TicketsAdmin.css"; // Your Beautiful CSS
+
+
+
 
 const Admin = () => {
+
+
+
   const [tickets, setTickets] = useState([]);
 
   useEffect(() => {
@@ -11,7 +17,7 @@ const Admin = () => {
 
   const fetchTickets = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/tickets");
+      const response = await axios.get("http://localhost:5000/ticketsadmin");
       setTickets(response.data);
     } catch (err) {
       console.error("Error fetching tickets", err);
@@ -20,7 +26,7 @@ const Admin = () => {
 
   const deleteTicket = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/tickets/${id}`);
+      await axios.delete(`http://localhost:5000/ticketsadmin/${id}`);
       setTickets(tickets.filter((ticket) => ticket._id !== id));
     } catch (err) {
       console.error("Error deleting ticket", err);
@@ -48,18 +54,20 @@ const Admin = () => {
         <table>
           <thead>
             <tr>
-              <th>Email</th>
-              <th>Subject</th>
-              <th>Message</th>
-              <th>Action</th>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Priority</th>
+              <th>Status</th>
+
             </tr>
           </thead>
           <tbody>
             {tickets.map((ticket) => (
               <tr key={ticket._id}>
-                <td>{ticket.email}</td>
-                <td>{ticket.subject}</td>
-                <td>{ticket.message}</td>
+                <td>{ticket.title}</td>
+                <td>{ticket.description}</td>
+                <td>{ticket.priority}</td>
+                <td>{ticket.status}</td>
                 <td>
                   <button onClick={() => deleteTicket(ticket._id)}>
                     Delete
