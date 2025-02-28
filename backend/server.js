@@ -16,7 +16,12 @@ if (process.env.NODE_ENV === "production") {}{
 
 const app = express(); // 🔥 This should be the FIRST LINE AFTER IMPORTS
 app.use(express.json());
-app.use(cors());
+const cors = require("cors");
+app.use(cors({
+  origin: "*", // Para gumana sa lahat ng devices
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 
 mongoose
   .connect("mongodb://localhost:27017/college_ticketing_system", {
@@ -32,6 +37,10 @@ const UserSchema = new mongoose.Schema({
   password: String,
 });
 
+
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log("MongoDB connected"))
+  .catch((err) => console.log(err));
 const User = mongoose.model("college_ticketings", UserSchema);
 
 // Register Endpoint
